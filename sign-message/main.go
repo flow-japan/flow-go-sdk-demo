@@ -65,7 +65,7 @@ func UserSignatureDemo() {
 	// 署名処理
 	privateKey, _ := crypto.DecodePrivateKeyHex(crypto.ECDSA_P256, rawPrivateKey)
 	signer := crypto.NewInMemorySigner(privateKey, crypto.SHA3_256)
-	messageHex, _ := hex.DecodeString(message)
+	messageHex := []byte(message)
 	signature, _ := flow.SignUserMessage(signer, messageHex)
 
 	// 署名検証
