@@ -36,7 +36,7 @@ pub fun main(rawPublicKeys: [String], weights: [UFix64], signatures: [String], s
     i = i + 1
   }
 
-	let signatureSet: [Crypto.KeyListSignature] = []
+  let signatureSet: [Crypto.KeyListSignature] = []
   var j = 0
   for signature in signatures {
     signatureSet.append(
@@ -48,7 +48,7 @@ pub fun main(rawPublicKeys: [String], weights: [UFix64], signatures: [String], s
     j = j + 1
   }
 
-	return keyList.isValid(
+  return keyList.isValid(
     signatureSet: signatureSet,
     signedData: signedData,
   )
